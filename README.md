@@ -4,15 +4,10 @@
     <title>Danh sách học sinh lớp 12A1</title>
     <style>
         body { font-family: Arial, sans-serif; } 
-
         table { border-collapse: collapse; width: 80%; margin-top: 20px; }
-
          th, td { border: 1px solid black; padding: 8px; text-align: center; }
-
           th { background-color: #f2f2f2; }
-
          input { margin: 5px; }
-
           .khung{
             text-align: bold;
             width: auto;
@@ -31,28 +26,18 @@
     </style>
 </head>
 <body>
-
     <h2 style="text-align: center;">Danh sách học sinh lớp 12A1</h2>
     <label class="dam">Họ và tên:</label>
     <input type="text" id="hoten" class="khung">
-
     <label class="dam">Ngày sinh:</label>
     <input type="date" id="ngaysinh" class="khung">
-
-
     <label class="dam">Điểm toán:</label>
     <input type="number" id="diemtoan" class="khung">
-
     <label class="dam">Điểm lý:</label>
     <input type="number" id="diemly" class="khung">
-
     <label class="dam">Điểm sinh:</label>
     <input type="number" id="diemsinh" class="khung">
-
-
-
     <button onclick="themHocSinh()">Thêm</button>
-
     <div id="khungBang">
     <table>
         <thead>
@@ -70,8 +55,13 @@
     </table>
     </div>
     <br>
-        <button onclick="veTruoc()"class="khung"> Về trước</button>
-        <button onclick="veSau()"class="khung"> Về sau</button>
+       <button onclick="veTruoc()" class="khung">
+    &laquo; Về trước
+</button>
+
+<button onclick="veSau()" class="khung">
+    Về sau &raquo;
+</button>
         <button onclick="xuatExcel()" class="khung">📥 Xuất ra Excel</button>
 <script>
 let trangHienTai = 1;
@@ -82,29 +72,23 @@ function hienThiTrang() {
     let cacDong = bang.getElementsByTagName("tr");
     let tongDong = cacDong.length;
     let tongTrang = Math.ceil(tongDong / soDongMoiTrang);
-
     for (let i = 0; i < tongDong; i++) {
         cacDong[i].style.display = "none";
     }
-
     let batDau = (trangHienTai - 1) * soDongMoiTrang;
     let ketThuc = batDau + soDongMoiTrang;
-
     for (let i = batDau; i < ketThuc && i < tongDong; i++) {
         cacDong[i].style.display = "";
     }
 }
-
 function veSau() {
     let tongDong = document.getElementById("bangdulieu").rows.length;
     let tongTrang = Math.ceil(tongDong / soDongMoiTrang);
-
     if (trangHienTai < tongTrang) {
         trangHienTai++;
         hienThiTrang();
     }
 }
-
 function veTruoc() {
     if (trangHienTai > 1) {
         trangHienTai--;
@@ -139,9 +123,7 @@ function xuatExcel() {
         ["\ufeff", html],
         { type: "application/vnd.ms-excel;charset=utf-8;" }
     );
-
     let url = URL.createObjectURL(blob);
-
     let a = document.createElement("a");
     a.href = url;
     a.download = "danhsach_hocsinh_12A1.xls";
@@ -150,29 +132,24 @@ function xuatExcel() {
     document.body.removeChild(a);
 }
          let stt = 1;
-
         function themHocSinh() {
             let hoten = document.getElementById("hoten").value;
             let ngaysinh = document.getElementById("ngaysinh").value;
             let diemtoan = document.getElementById("diemtoan").value;
             let diemly = document.getElementById("diemly").value;
             let diemsinh = document.getElementById("diemsinh").value;
-
             if (hoten === "" || diemtoan === "" || ngaysinh === "" || diemly ==="" || diemsinh ==="") {
                 alert("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
-
             let bang = document.getElementById("bangdulieu");
             let dong = bang.insertRow();
-
             dong.insertCell(0).innerHTML = stt++;
             dong.insertCell(1).innerHTML = hoten;
             dong.insertCell(2).innerHTML = ngaysinh;
             dong.insertCell(3).innerHTML = diemtoan;
             dong.insertCell(4).innerHTML = diemly;
             dong.insertCell(5).innerHTML = diemsinh;
-
             document.getElementById("hoten").value = "";
             document.getElementById("ngaysinh").value = "";
             document.getElementById("diemtoan").value = "";
