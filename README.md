@@ -70,8 +70,8 @@
     </table>
     </div>
     <br>
-        <button onclick="veTruoc()"class="khung">⬅️ Về trước</button>
-        <button onclick="veSau()"class="khung">➡️ Về sau</button>
+        <button onclick="veTruoc()"class="khung"> Về trước</button>
+        <button onclick="veSau()"class="khung"> Về sau</button>
         <button onclick="xuatExcel()" class="khung">📥 Xuất ra Excel</button>
 <script>
 let trangHienTai = 1;
@@ -178,12 +178,10 @@ function xuatExcel() {
             document.getElementById("diemtoan").value = "";
             document.getElementById("diemly").value = "";
             document.getElementById("diemsinh").value = "";
-            hienThiTrang();
         }
-    document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("btnTruoc").addEventListener("click", veTruoc);
-    document.getElementById("btnSau").addEventListener("click", veSau);
-});
+window.onload = function () {
+    hienThiTrang();
+};
     </script>
 <footer style="text-align: center;">Thiết kế Website: <b>Phong – Khôi</b></footer>
 </body>
