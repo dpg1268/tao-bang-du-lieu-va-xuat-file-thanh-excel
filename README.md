@@ -33,6 +33,7 @@
     <input type="date" id="ngaysinh" class="khung">
     <label class="dam">Điểm toán:</label>
     <input type="number" id="diemtoan" class="khung">
+    <br>
     <label class="dam">Điểm lý:</label>
     <input type="number" id="diemly" class="khung">
     <label class="dam">Điểm sinh:</label>
