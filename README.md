@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -71,8 +70,8 @@
     </table>
     </div>
     <br>
-        <button onclick="veTruoc()"class="khung">⬅️ Về trước</button>
-        <button onclick="veSau()"class="khung">➡️ Về sau</button>
+        <button onclick="veTruoc()"class="khung"> Về trước</button>
+        <button onclick="veSau()"class="khung"> Về sau</button>
         <button onclick="xuatExcel()" class="khung">📥 Xuất ra Excel</button>
 <script>
 let trangHienTai = 1;
