@@ -15,7 +15,7 @@ body{
     align-items:flex-start;
     gap:20px;
     margin:30px;
-    max-width:1200px;
+    max-width:1500px;
 }
 /* box chung */
 .sidebar{
