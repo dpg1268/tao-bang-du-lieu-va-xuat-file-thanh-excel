@@ -68,8 +68,11 @@ body{
     display:flex;
     gap:15px;
 }
-.tv, .hd{
-    flex:0 0 400px;
+.tv{
+    flex:0 0 260px;
+}
+    .hd{
+    flex:0 0 320px;
 }
 .left{
     width:40%;
