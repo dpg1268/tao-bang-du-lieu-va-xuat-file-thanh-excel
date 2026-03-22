@@ -201,8 +201,7 @@ body{
 <div class="container">
     <div class="header">
         <div class="left">
-            <img src="https://cdn.thuvienphapluat.vn/phap-luat/2022-2/QB/180324/DOAN-TNCS.jpg">
-            <img src="https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2025/4/27/anh-1-1745757317683461590713.jpg">
+            <img src="https://s.yimg.com/zb/imgv1/8b3c733b-4f67-3258-9d7b-1547f274efba/t_500x300">
         </div>
         <div class="right">
             <div class="title">
