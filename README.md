@@ -81,15 +81,6 @@ body{
     width:100%;
     margin-bottom:10px;
 }
-    .center-img{
-    text-align:center;
-    margin:15px 0;
-}
-.center-img img{
-    width:80%;
-    max-width:400px;
-    border-radius:10px;
-}
 .right{
     width:60%;
     text-align:center;
@@ -209,7 +200,7 @@ body{
 <!-- NỘI DUNG -->
 <div class="container">
     <div class="header">
-        <div class="center-img">
+        <div class="left">
             <img src="https://s.yimg.com/zb/imgv1/8b3c733b-4f67-3258-9d7b-1547f274efba/t_500x300">
         </div>
         <div class="right">
