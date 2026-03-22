@@ -19,7 +19,7 @@ body{
 }
 /* box chung */
 .sidebar{
-    width:300px;
+    width:450px;
     border:3px solid red;
     border-radius:10px;
     background:#fff8c6;
@@ -108,7 +108,6 @@ body{
 .activity a:hover img{
     transform:scale(1.1);
 }
-
 .activity a:hover{
     color:red;
 }
