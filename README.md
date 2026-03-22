@@ -69,7 +69,7 @@ body{
     gap:15px;
 }
 .tv, .hd{
-    flex:1;
+    flex:0 0 400px;
 }
 .left{
     width:40%;
