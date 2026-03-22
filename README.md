@@ -1,166 +1,251 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Danh sách học sinh lớp 12A1</title>
-    <style>
-        body { font-family: Arial, sans-serif; } 
-        table { border-collapse: collapse; width: 80%; margin-top: 20px; }
-         th, td { border: 1px solid black; padding: 8px; text-align: center; }
-          th { background-color: #f2f2f2; }
-         input { margin: 5px; }
-          .khung{
-            text-align: bold;
-            width: auto;
-            height: auto;
-      background:#fff;
-      padding:10px;
-      border-radius:6px;
-      box-shadow:0 1px 3px rgba(0,0,0,0.06);
-        border: 4px solid transparent;
-      background: 
-        linear-gradient(white, white) padding-box,
-        linear-gradient(90deg, #ff7a18, #af002d, #319197) border-box;
-    }
-    .dam
-    {font-weight: bold}
-    </style>
+<meta charset="UTF-8">
+<title>Kỷ niệm 26/3</title>
+
+<style>
+body{
+    margin:0;
+    background:#f6e27a;
+}
+
+/* layout 3 cột */
+.main-layout{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:20px;
+    margin:40px;
+}
+
+/* container giữa */
+.container{
+    max-width:900px;
+    width:100%;
+    padding:40px;
+    border:4px solid red;
+    border-radius:10px;
+    background:#fff8c6;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+/* sidebar trái phải */
+.sidebar{
+    width:220px;
+    border:3px solid red;
+    border-radius:10px;
+    background:#fff8c6;
+    padding:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    height:fit-content;
+}
+
+.sidebar h3{
+    text-align:center;
+    color:red;
+}
+
+.sidebar p{
+    font-size:16px;
+    margin:8px 0;
+}
+
+/* banner */
+.banner img{
+    width:100%;
+}
+
+/* chữ chạy */
+.marquee{
+    width:100%;
+    overflow:hidden;
+    background:#f6e27a;
+}
+
+.marquee p{
+    display:inline-block;
+    white-space:nowrap;
+    animation:chaychu 12s linear infinite;
+    font-size:18px;
+    font-weight:bold;
+    color:red;
+}
+
+@keyframes chaychu{
+    from{transform:translateX(100%);}
+    to{transform:translateX(-100%);}
+}
+
+/* header */
+.header{
+    display:flex;
+    margin-top:20px;
+}
+
+.left{
+    width:40%;
+}
+
+.left img{
+    width:100%;
+}
+
+.right{
+    width:60%;
+    text-align:center;
+}
+
+/* tiêu đề */
+.title{
+    color:red;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.date{
+    color:blue;
+    font-size:20px;
+    margin-top:5px;
+    font-weight:bold;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.text, .l{
+    margin-top:15px;
+    font-size:18px;
+    color:#c0392b;
+    line-height:1.6;
+    font-weight:bold;
+    font-family: 'Dancing Script', cursive;
+    text-align:center;
+}
+
+/* ảnh */
+.im{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.im img{
+    width:50%;
+}
+.im img{
+    width:400px;
+    height:300px;
+    border-radius:8px;
+    transition:0.3s;
+}
+.im img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 10px red;
+}
+/* video */
+.video{
+    text-align:center;
+    margin-top:20px;
+}
+
+/* footer */
+.t{
+    text-align:center;
+    margin-top:20px;
+    font-size:18px;
+    color:#c0392b;
+    font-weight:bold;
+}
+</style>
 </head>
+
 <body>
-    <h2 style="text-align: center;">Danh sách học sinh lớp 12A1</h2>
-    <label class="dam">Họ và tên:</label>
-    <input type="text" id="hoten" class="khung">
-    <label class="dam">Ngày sinh:</label>
-    <input type="date" id="ngaysinh" class="khung">
-    <label class="dam">Điểm toán:</label>
-    <input type="number" id="diemtoan" class="khung">
-    <br>
-    <label class="dam">Điểm lý:</label>
-    <input type="number" id="diemly" class="khung">
-    <label class="dam">Điểm sinh:</label>
-    <input type="number" id="diemsinh" class="khung">
-    <button onclick="themHocSinh()">Thêm</button>
-    <div id="khungBang">
-    <table>
-        <thead>
-            <tr>
-                <th>STT</th>
-                <th>Họ và tên</th>
-                <th>Ngày sinh</th>
-                <th>điểm toán</th>
-                <th>điểm lý</th>
-                <th>điểm sinh</th>
-            </tr>
-        </thead>
-        <tbody id="bangdulieu">
-        </tbody>
-    </table>
+
+<!-- banner -->
+<div class="banner">
+<img src="https://i.postimg.cc/DyyxVD83/z7631297192152-0b39019d485261de1b29e7f27c2b86ef.jpg">
+</div>
+
+<!-- chữ chạy -->
+<div class="marquee">
+<p>CHÀO MỪNG NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH 26/03</p>
+</div>
+
+<!-- layout chính -->
+<div class="main-layout">
+    <!-- BOX TRÁI -->
+    <div class="sidebar">
+        <h3>LỊCH SỬ</h3>
+        <p>📅 26/03/1931</p>
+        <p>📌 Thành lập Đoàn TNCS Hồ Chí Minh</p>
+        <p>🔥 Thanh niên là lực lượng tiên phong</p>
     </div>
-    <br>
-       <button onclick="veTruoc()" class="khung">
-    &laquo; Về trước
-</button>
+    <!-- NỘI DUNG GIỮA -->
+    <div class="container">
+        <div class="header">
+            <div class="left">
+                <img src="https://cdn.thuvienphapluat.vn/phap-luat/2022-2/QB/180324/DOAN-TNCS.jpg">
+                <img src="https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2025/4/27/anh-1-1745757317683461590713.jpg">
+            </div>
+            <div class="right">
+                <div class="title">
+                    KỶ NIỆM 95 NĂM<br>
+                    ĐOÀN TNCS HỒ CHÍ MINH
+                </div>
+                <div class="date">
+                    (26/3/1931 - 26/3/2026)
+                </div>
+                <div class="text">
+Ngày 26/3 hằng năm là dịp để tuổi trẻ Việt Nam cùng nhau ôn lại truyền thống vẻ vang của Đoàn Thanh niên Cộng sản Hồ Chí Minh – tổ chức được thành lập vào ngày 26/3/1931. Đây là nơi tập hợp, giáo dục và định hướng lý tưởng cho thế hệ thanh niên Việt Nam.
+                </div>
+                <div class="l">
+    Trong suốt chặng đường lịch sử của dân tộc, thanh niên luôn là lực lượng xung kích trong học tập, lao động và bảo vệ Tổ quốc. Biết bao thế hệ đoàn viên đã cống hiến sức trẻ, lòng nhiệt huyết để góp phần xây dựng và phát triển đất nước.
 
-<button onclick="veSau()" class="khung">
-    Về sau &raquo;
-</button>
-        <button onclick="xuatExcel()" class="khung">📥 Xuất ra Excel</button>
-<script>
-let trangHienTai = 1;
-let soDongMoiTrang = 3;
+Ngày nay, thanh niên tiếp tục phát huy tinh thần năng động, sáng tạo thông qua nhiều phong trào ý nghĩa như học tập tốt, tham gia hoạt động tình nguyện và rèn luyện bản thân. Những hoạt động đó giúp tuổi trẻ trưởng thành và đóng góp tích cực cho xã hội.
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h2 style="text-align:center; color:red;">HÌNH ẢNH TIÊU BIỂU</h2>
+        <div class="im">
+           <a href="https://c3easup.daklak.edu.vn/truong-thpt-ea-sup-tung-bung-to-chuc-cac-hoat-dong-ky-niem-92-nam-ngay-thanh-lap-doan-tncshcm-26031931-26032023.html" target="_blank">
+            <img src="http://c3easup.daklak.edu.vn/wp-content/uploads/z4213912239140_0b0ed7bf3d3c1834dcecdd1fc1f0db11.jpg"></a>
+           <a href="https://c3easup.daklak.edu.vn/truong-thpt-ea-sup-tung-bung-to-chuc-cac-hoat-dong-ky-niem-92-nam-ngay-thanh-lap-doan-tncshcm-26031931-26032023.html" target="_blank">
+            <img src="http://c3easup.daklak.edu.vn/wp-content/uploads/z4213912215904_465438fa0e71188596b003c2c2e11a8f.jpg">
+            </a>
+        </div>
+        <hr>
+        <p style="text-align:center; color:red;">▶ Video kỷ niệm</p>
+        <div class="video">
+            <iframe width="700" height="400"
+            src="https://www.youtube.com/embed/Kui4Tt7lbE0"
+            frameborder="0"
+            allowfullscreen>
+            </iframe>
+        </div>
+        <div class="t">
+            <p>THPT Ea Súp</p>
+            <p>Chi đoàn 12A1</p>
+            <p>Nhóm 1</p>
+            <p>Người làm: Đức Phong</p>
+        </div>
+    </div>
+    <!-- BOX PHẢI -->
+    <div class="sidebar">
+        <h3>HOẠT ĐỘNG</h3>
+        <p>🎤 Văn nghệ</p>
+        <p>⚽ Thể thao</p>
+        <p>📚 Sinh hoạt đoàn</p>
+        <p>💡 Tình nguyện</p>
+        <p>🚀 Phát triển kỹ năng</p>
+    </div>
 
-function hienThiTrang() {
-    let bang = document.getElementById("bangdulieu");
-    let cacDong = bang.getElementsByTagName("tr");
-    let tongDong = cacDong.length;
-    let tongTrang = Math.ceil(tongDong / soDongMoiTrang);
-    for (let i = 0; i < tongDong; i++) {
-        cacDong[i].style.display = "none";
-    }
-    let batDau = (trangHienTai - 1) * soDongMoiTrang;
-    let ketThuc = batDau + soDongMoiTrang;
-    for (let i = batDau; i < ketThuc && i < tongDong; i++) {
-        cacDong[i].style.display = "";
-    }
-}
-function veSau() {
-    let tongDong = document.getElementById("bangdulieu").rows.length;
-    let tongTrang = Math.ceil(tongDong / soDongMoiTrang);
-    if (trangHienTai < tongTrang) {
-        trangHienTai++;
-        hienThiTrang();
-    }
-}
-function veTruoc() {
-    if (trangHienTai > 1) {
-        trangHienTai--;
-        hienThiTrang();
-    }
-}
-function xuatExcel() {
-    let table = document.querySelector("table");
-    let html = `
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <style>
-                table { border-collapse: collapse; }
-                th, td {
-                    border: 1px solid black;
-                    padding: 5px;
-                    text-align: center;
-                }
-                th {
-                    font-weight: bold;
-                    background-color: #f2f2f2;
-                }
-            </style>
-        </head>
-        <body>
-            ${table.outerHTML}
-        </body>
-        </html>
-    `;
-    let blob = new Blob(
-        ["\ufeff", html],
-        { type: "application/vnd.ms-excel;charset=utf-8;" }
-    );
-    let url = URL.createObjectURL(blob);
-    let a = document.createElement("a");
-    a.href = url;
-    a.download = "danhsach_hocsinh_12A1.xls";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-         let stt = 1;
-        function themHocSinh() {
-            let hoten = document.getElementById("hoten").value;
-            let ngaysinh = document.getElementById("ngaysinh").value;
-            let diemtoan = document.getElementById("diemtoan").value;
-            let diemly = document.getElementById("diemly").value;
-            let diemsinh = document.getElementById("diemsinh").value;
-            if (hoten === "" || diemtoan === "" || ngaysinh === "" || diemly ==="" || diemsinh ==="") {
-                alert("Vui lòng nhập đầy đủ thông tin!");
-                return;
-            }
-            let bang = document.getElementById("bangdulieu");
-            let dong = bang.insertRow();
-            dong.insertCell(0).innerHTML = stt++;
-            dong.insertCell(1).innerHTML = hoten;
-            dong.insertCell(2).innerHTML = ngaysinh;
-            dong.insertCell(3).innerHTML = diemtoan;
-            dong.insertCell(4).innerHTML = diemly;
-            dong.insertCell(5).innerHTML = diemsinh;
-            document.getElementById("hoten").value = "";
-            document.getElementById("ngaysinh").value = "";
-            document.getElementById("diemtoan").value = "";
-            document.getElementById("diemly").value = "";
-            document.getElementById("diemsinh").value = "";
-        }
-window.onload = function () {
-    hienThiTrang();
-};
-    </script>
-<footer style="text-align: center;">Thiết kế Website: <b>Phong – Khôi</b></footer>
+<div class="t">
+    <p>THPT Ea Súp</p>
+    <p>Chi đoàn 12A1</p>
+    <p>Nhóm 1</p>
+    <p>Người làm: Đức Phong</p>
+</div>
+
 </body>
 </html>
