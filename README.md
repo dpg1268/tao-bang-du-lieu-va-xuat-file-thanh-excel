@@ -34,7 +34,7 @@ body{
 }
 /* container */
 .container{
-    max-width:825px;
+    max-width:650px;
     width:100%;
     padding:30px;
     border:4px solid red;
