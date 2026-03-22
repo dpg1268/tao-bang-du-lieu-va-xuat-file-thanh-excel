@@ -34,13 +34,14 @@ body{
 }
 /* container */
 .container{
-    max-width:650px;
+    max-width:750px;
     width:100%;
     padding:30px;
     border:4px solid red;
     border-radius:10px;
     background:#fff8c6;
     box-shadow:0 0 15px rgba(0,0,0,0.2);
+    flex:2;
 }
 /* banner */
 .banner img{
@@ -66,11 +67,9 @@ body{
     display:flex;
     gap:15px;
 }
-.tv{
-    width: 400px;
-}
-.hd{
-    width: 500px;
+.tv, .hd{
+    flex:1;
+    max-width:260px;
 }
 .left{
     width:40%;
