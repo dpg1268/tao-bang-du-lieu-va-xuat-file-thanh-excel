@@ -3,6 +3,9 @@
 <meta charset="UTF-8">
 <title>Kỷ niệm 26/3</title>
 <style>
+    h1:first-of-type {
+    display: none;
+}
 body{
     margin:0;
     background:#f6e27a;
